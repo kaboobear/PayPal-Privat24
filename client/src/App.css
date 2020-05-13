@@ -200,7 +200,7 @@ input[type=number] {
 .btn {
   background: #5cdb95;
   border: 2px solid transparent;
-  border-radius: 5px;
+  border-radius: 15px;
   padding: 10px 20px;
   text-align: center;
   cursor: pointer;
@@ -208,8 +208,8 @@ input[type=number] {
   max-width: 100%;
   width: 100%;
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 300;
+  font-size: 22px;
   letter-spacing: 0.03em;
   color: #FFFFFF;
   text-align: center;
@@ -227,7 +227,7 @@ input[type=number] {
 .btn:hover {
   /* box-shadow: 0 7px 10px rgba(0, 0, 0, .3);
   transform: translateY(-3px); */
-  background:#60cc90;
+  /* background:#60cc90; */
 }
 
 .btn.simple:hover{
@@ -259,7 +259,7 @@ textarea {
   letter-spacing: -0.01em;
   color: #232323;
   font-family: Montserrat;
-  border-radius: 5px;
+  border-radius: 15px;
 }
 
 input.error{
@@ -312,7 +312,7 @@ textarea:focus::placeholder {
 
 
 .header-section{
-  background: #24292e;;
+  background: #24292e;
   padding: 15px 0;
 }
 
@@ -465,6 +465,247 @@ textarea:focus::placeholder {
   width: 25px;
   filter: invert(78%) sepia(73%) saturate(3950%) hue-rotate(309deg) brightness(95%) contrast(89%);
 }
+
+
+
+
+
+
+.payment-form-wrap{
+  display: flex;
+  justify-content: center;
+}
+
+.payment-form{
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.payment-form form{
+  width: 100%;
+}
+
+.total{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+
+.total-word{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.total-value{
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.total-value .cur{
+  font-size: 16px;
+}
+
+.buttons{
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.pay-btn{
+  width: calc(100% - 7.5px);
+  background: #3b7bbf;
+  margin-right: 7.5px;
+}
+
+.liq-btn{
+  width: calc(100% - 7.5px);
+  background: #7ab72b;
+  margin-left: 7.5px;
+}
+
+.pay-btn:hover,
+.liq-btn:hover{
+  opacity: .7;
+}
+
+.filters{
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.items{
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+
+
+
+
+
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.toggle-label input {
+  display: none;
+}
+
+.toggle-text {
+  margin-left: 15px;
+  font-size: 16px;
+  opacity: .5;
+}
+
+.toggle-box {
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-box-line {
+  width: 70px;
+  height: 35px;
+  border-radius: 60px;
+  background: #ddd;
+  transition: .3s;
+}
+
+.toggle-box-circle {
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 .25em rgba(0, 0, 0, .3);
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 25px;
+  height: 25px;
+  transition: .3s;
+}
+
+.toggle-label input:checked~.toggle-box .toggle-box-circle {
+  right: calc(100% - 25px - 5px);
+}
+
+.toggle-label input:checked~.toggle-box .toggle-box-line {
+  background: #5cdb95;
+}
+
+
+
+
+
+
+.check-label {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  cursor: pointer;
+
+}
+
+.check-label+.check-label {
+  margin-top: 15px;
+}
+
+.check-label input {
+  display: none;
+}
+
+.check-text {
+  font-size: 18px;
+}
+
+.check-box {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #5cdb95;
+  margin-right: 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: .2s;
+}
+
+.check-label input:checked~.check-box {
+  background: #5cdb95;
+}
+
+.check-label input:checked~.check-box:after {
+  content: '';
+  position: absolute;
+  left: 51%;
+  top: 54%;
+  transform: translate(-50%, -50%);
+  width: 15px;
+  height: 15px;
+  background: url(./img/my-check.svg) no-repeat center;
+  background-size: cover;
+  filter: invert(100%);
+}
+
+.check-label input:checked~.check-box:before {
+  opacity: 1;
+}
+
+.woods{
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+}
+
+.woods .check-label{
+  width: 100%;
+}
+
+.woods .check-label{
+  transition: .3s;
+}
+
+.woods .check-label:hover{
+  transform: translateY(-6px);
+}
+
+
+.check-label-wrap{
+  width: 33.33333%;
+  padding: 10px;
+}
+
+.woods .check-box{
+  width: 100%;
+  padding-bottom: 100%;
+  border:none;
+  border:2px solid #5cdb95;
+  border-radius: 15px;
+  margin-right: 0;
+}
+
+.woods .check-label input:checked~.check-box{
+  background-color :#5cdb95 !important;
+}
+
+
+
+
+.woods .check-label input:checked~.check-box:after{
+  display: none;
+}
+
+
+
+
 
 
 
