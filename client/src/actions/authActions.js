@@ -35,12 +35,11 @@ export const login = (loginData) => dispatch =>{
     const body = JSON.stringify(loginData)
     axios.post('/user/login',body,config)
         .then(res => {
-            console.log(res.status);
             dispatch({type:LOGIN_SUCCESS,payload:res.data})
         })
         .catch(err => {
-            console.log(err.response);
-            dispatch(returnErrors(err.response.data,err.response.status,LOGIN_FAIL))
+            if(err.response.status === 401) dispatch(returnErrors({pass: "Wrong password"},err.response.status,LOGIN_FAIL))
+            else dispatch(returnErrors(err.response.data,err.response.status,LOGIN_FAIL))
             dispatch({type:LOGIN_FAIL})
         })
 }
